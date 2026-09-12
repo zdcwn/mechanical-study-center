@@ -1,40 +1,31 @@
-# 机械刷题中心（GitHub Pages 静态版）
+# 机械刷题中心
 
-双科目在线刷题站：机械原理（11 章 · 3498 题）+ 机械设计（14 章 · 3088 题）。
-**与服务器版完全相同的桌面 UI**（React + Tailwind），通过 esbuild 打包为纯静态单页应用，托管在 GitHub Pages，无需服务器。
+机械原理 + 机械设计双科目在线刷题网站。
 
-## 部署状态
+**在线使用**：<https://zdcwn.github.io/mechanical-study-center/>
 
-- 仓库：<https://github.com/zdcwn/mechanical-study-center>
-- 站点：<https://zdcwn.github.io/mechanical-study-center/>
+## 内容
 
-## 更新流程
+| 科目 | 章节 | 题量 |
+|---|---|---|
+| 机械原理 | 11 章 | 3498 题 |
+| 机械设计 | 14 章 | 3088 题 |
 
-题库更新后：
+题型覆盖判断、单选、多选、填空、简答、大题，题目配有题图与答案图。
 
-1. 在上级目录（融合刷题网站）运行 `python tools/构建GitHubPages静态版.py`（重新解密生成 `data/` 与 `img/`）
-2. 若界面代码有改动，重新打包：
-   ```
-   node tools\build_pages_css.mjs
-   node_modules\.bin\esbuild.cmd pages-app/main.tsx --bundle --minify --format=iife --jsx=automatic --target=es2020 --charset=utf8 --outdir=github-pages --entry-names=app
-   ```
-3. 在 `github-pages` 目录 `git add . && git commit -m 更新 && git push`
+## 功能
 
-## 结构
+- **分章练习**：按章节 / 题型 / 每 50 题分组进入，支持题目列表跳题、自动保存进度
+- **错题本**：答错自动收录，按章节回顾，支持标记"掌握 / 模糊 / 不会"
+- **模拟组卷**：期末模拟卷 / 单元卷，可勾选章节与题型范围，大题按考察方向与知识点分散智能选题
+- **试卷记录**：已组试卷保存记录，可导出为 Word 文件（含题图）打印练习
+- **学习统计**：各章练习量、正确率一目了然
+- **学习记录导入导出**：JSON 文件备份恢复，跨设备迁移
+- **同步码**：不同设备之间用短同步码互导学习记录
 
-| 路径 | 内容 |
-|---|---|
-| `index.html` / `app.js` / `app.css` | React 单页应用（源码在上级 `pages-app/`） |
-| `data/jxyl.json` `data/jxsj.json` | 两科目完整题库（题目、答案、图片路径） |
-| `img/*.jpg` | 2714 张题图 / 答案图（明文） |
-| `.nojekyll` | 跳过 GitHub Pages 的 Jekyll 处理 |
+## 使用说明
 
-- 路由：`#/` 科目首页，`#/yuanli` 机械原理，`#/sheji` 机械设计
-- 组卷分类器（大题方向/知识点分散）在浏览器端运行，与服务器版逐字一致
-- Word 试卷导出在浏览器内完成（含图片）
-- 进度/错题/试卷记录存浏览器 localStorage；同步码与服务器版、安卓离线版互通
-
-## 注意
-
-- 静态托管上题库与图片为**明文公开**，加密保护不适用于此版本。
-- 本目录总大小约 110MB，符合 GitHub 仓库与 Pages 限制。
+1. 打开网站，选择科目进入
+2. 左侧栏切换：章节练习、错题本、模拟组卷、统计、设置
+3. 学习进度自动保存在当前浏览器中，换设备可用同步码或记录文件迁移
+4. 手机浏览器同样可用，建议"添加到主屏幕"方便日常使用
