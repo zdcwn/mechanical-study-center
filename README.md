@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="https://zdcwn.github.io/mechanical-study-center/"><strong>▶ 在线使用</strong></a>
+  <a href="https://mechanicaldesign.online"><strong>▶ 在线使用</strong></a>
 </p>
 
 ## 📚 题库内容
@@ -39,7 +39,7 @@
 
 ## 📖 使用说明
 
-1. 打开[网站](https://zdcwn.github.io/mechanical-study-center/)，选择科目进入
+1. 打开[网站](https://mechanicaldesign.online)，选择科目进入
 2. 左侧栏切换：章节练习、错题本、模拟组卷、统计、设置
 3. 学习进度自动保存在当前浏览器中，换设备可用同步码或记录文件迁移
 4. 手机浏览器同样可用，建议"添加到主屏幕"方便日常使用
